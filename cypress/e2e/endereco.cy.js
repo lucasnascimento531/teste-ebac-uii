@@ -1,4 +1,5 @@
 ///<reference types="cypress" />
+import EnderecoPage from '../support/page-objects/endereco.page'
 
 describe('Funcionalidade Endereço - Faturamento e Entrega', () => {
 
@@ -10,7 +11,8 @@ describe('Funcionalidade Endereço - Faturamento e Entrega', () => {
         
     });
 
-    it('Deve fazer cadastro de faturamento com sucesso', () => {
-        
+    it.only('Deve fazer cadastro de faturamento com sucesso', () => {
+        EnderecoPage.editarEnderecoFaturamento('Lucas', 'Cruz', 'google', 'Av. Brasil', '3000', 'São Paulo', 'São Paulo', '06275555', '199999999', 'teste@teste.com')
+        cy.get('.woocommerce-message').should('contain', 'Endereço')
     });
 });
