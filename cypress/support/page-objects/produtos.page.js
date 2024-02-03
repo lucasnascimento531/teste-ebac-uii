@@ -1,25 +1,35 @@
 class produtosPage {
 
-    visitarUrl() {
-        cy.visit('http://lojaebac.ebaconline.art.br/produtos')
+  visitarUrl() {
+    cy.visit('http://lojaebac.ebaconline.art.br/produtos/')
+  }
+
+
+    buscarProduto(nomeProduto) {
+        cy.get('[name="s"]').eq(1).type(nomeProduto)
+        cy.get('.button-search').eq(1).click()
     }
 
-    buscarProduto() {
-
-    }
 
     buscarProdutoLista(nomeProduto) {
         cy.get('.products > .row').contains(nomeProduto).click()
-    }
-
-    visitarProduto() {
 
     }
 
-    adicionarProdutoCarrinho() {
-
+    visitarProduto(nomeProduto) {
+        cy.visit(`http://lojaebac.ebaconline.art.br/produtos/${nomeProduto}`)
     }
+
+
+    addProdutoCarrinho(tamanho, cor, quantidade) {
+        cy.get('.button-variable-item-' + tamanho).click()
+        cy.get('.button-variable-item-' + cor).click()
+        cy.get('.input-text').clear().type(quantidade)
+        cy.get('.single_add_to_cart_button').click()
+
+        cy.get('.woocommerce-message').should('contain' , 'Aero')
+    }
+
 }
-
 
 export default new produtosPage()

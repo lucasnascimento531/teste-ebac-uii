@@ -1,0 +1,23 @@
+[
+    {
+        "nomeProduto": "Aether Gym Pant",
+        "tamanho": "32",
+        "cor": "Blue",
+        "quantidade": 2
+    },
+
+    {
+        "nomeProduto": "Arcadio Gym Short",
+        "tamanho": "34",
+        "cor": "Blue",
+        "quantidade": 2
+        
+    },
+    
+    {
+        "nomeProduto": "Ariel Roll Sleeve Sweatshirt",
+        "tamanho": "xs",
+        "cor": "Red",
+        "quantidade": 2
+    }
+]
