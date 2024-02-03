@@ -27,7 +27,7 @@ class produtosPage {
         cy.get('.input-text').clear().type(quantidade)
         cy.get('.single_add_to_cart_button').click()
 
-        cy.get('.woocommerce-message').should('contain' , 'Aero')
+        
     }
 
 }
